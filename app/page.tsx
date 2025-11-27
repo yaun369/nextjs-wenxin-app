@@ -118,10 +118,10 @@ export default function Home() {
         {/* 标题区域 */}
         <div className="text-center mb-10">
           <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-600 via-pink-500 to-blue-500 bg-clip-text text-transparent mb-3">
-            🔮 AI 性格分析师
+            ✨ AI头像分析
           </h1>
           <p className="text-gray-600 dark:text-gray-300 text-lg">
-            上传你的头像，输入你的昵称，让 AI 解读你的性格喜好
+            上传你的头像，输入你的昵称，让文心5.0大模型解读你的性格与特点！
           </p>
         </div>
 
@@ -139,10 +139,9 @@ export default function Home() {
               >
                 <div
                   className={`w-full h-48 rounded-2xl border-2 border-dashed transition-all duration-300 flex items-center justify-center overflow-hidden
-                    ${
-                      imagePreview
-                        ? "border-purple-400 bg-purple-50 dark:bg-purple-900/30"
-                        : "border-gray-300 dark:border-gray-600 hover:border-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900/20"
+                    ${imagePreview
+                      ? "border-purple-400 bg-purple-50 dark:bg-purple-900/30"
+                      : "border-gray-300 dark:border-gray-600 hover:border-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900/20"
                     }`}
                 >
                   {imagePreview ? (
@@ -204,10 +203,9 @@ export default function Home() {
                 type="submit"
                 disabled={isLoading}
                 className={`flex-1 py-3 px-6 rounded-xl font-semibold text-white transition-all duration-300 transform
-                  ${
-                    isLoading
-                      ? "bg-gray-400 cursor-not-allowed"
-                      : "bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 hover:scale-[1.02] hover:shadow-lg active:scale-[0.98]"
+                  ${isLoading
+                    ? "bg-gray-400 cursor-not-allowed"
+                    : "bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 hover:scale-[1.02] hover:shadow-lg active:scale-[0.98]"
                   }`}
               >
                 {isLoading ? (

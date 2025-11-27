@@ -34,7 +34,9 @@ const ANALYSIS_PROMPT = `你是一位资深的心理分析师和性格解读专�
 
 请用轻松有趣、富有洞察力的语言进行分析，让用户感到被理解和认可。分析要具体、有细节，但也要保持积极正面的基调。
 
-注意：这是一个娱乐性质的分析，请确保内容友善、积极、有趣，避免任何负面或冒犯性的描述。`;
+注意：这是一个娱乐性质的分析，请确保内容友善、积极、有趣，避免任何负面或冒犯性的描述。
+
+避免使用 markdown 格式，直接输出纯文本内容，段落直接换行。`;
 
 export async function POST(request: NextRequest) {
   try {
@@ -59,8 +61,10 @@ export async function POST(request: NextRequest) {
 
     // 构建请求体
     const requestBody = {
-      model: "ernie-4.5-8k-preview", // 文心4.5多模态模型
+      model: "ernie-5.0-thinking-preview", // 文心5.0多模态模型
+      // model: "ernie-4.5-8k-preview", // 文心4.5多模态模型
       stream: true,
+      enable_thinking: false,
       messages: [
         {
           role: "user",
@@ -73,7 +77,7 @@ export async function POST(request: NextRequest) {
             },
             {
               type: "text",
-              text: `${ANALYSIS_PROMPT}\n\n用户昵称：「${nickname}」\n\n请根据上面这张头像图片和昵称，进行详细的性格分析。`,
+              text: `${ANALYSIS_PROMPT}\n\n用户昵称：「${nickname}」\n\n请根据上面这张头像图片和昵称，进行有趣的性格分析。`,
             },
           ],
         },
